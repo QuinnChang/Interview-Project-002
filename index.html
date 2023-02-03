@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>系統管理</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="lib/jquery-ui.css" />
+    <link rel="stylesheet" href="lib/main.css" />
+    <script src="lib/jquery-3.6.1.min.js"></script>
+    <script src="lib/jquery-ui.min.js"></script>
+
+    <script src="/tool.js"></script>
+    <script src="/app.js"></script>
+    <script src="/data.js"></script>
+    <script src="lib/main.js"></script>
+    <script src="lib/locales-all.js"></script>
+  </head>
+  <body>
+    <nav>
+      <h1>會員課表管理系統</h1>
+      <div id="tab"></div>
+    </nav>
+
+    <section>
+      <form id="funcBar" action="" method="get">
+        <div id="partOne">
+          <input
+            id="dateMon"
+            name="dateMon"
+            type="text"
+            value=""
+            placeholder="請選擇日期"
+          />
+        </div>
+        <div id="partTwo">
+          <input
+            id="weight"
+            name="weight"
+            class="num"
+            type="number"
+            value=""
+            min="0"
+            placeholder="重量(公斤)"
+          />
+          <input
+            id="reps"
+            name="reps"
+            class="num"
+            type="number"
+            value=""
+            min="0"
+            placeholder="次數/秒數"
+          />
+          <input
+            id="sets"
+            name="sets"
+            class="num"
+            type="number"
+            value=""
+            min="0"
+            placeholder="組數"
+          />
+          <input
+            id="rest"
+            name="rest"
+            class="num"
+            type="number"
+            value=""
+            min="0"
+            placeholder="休息時間(秒數)"
+          />
+          <button id="submit">確認</button>
+        </div>
+      </form>
+    </section>
+
+    <div id="list" class="tabcontent"></div>
+    <div id="calendar" class="tabcontent"></div>
+
+    <script>
+      memberManager.func.init();
+    </script>
+  </body>
+</html>
