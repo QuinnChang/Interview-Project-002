@@ -4,7 +4,6 @@ let memberManager = {};
     memberManager.constants = {};
     dataBaseMap = new Map();
     mode = "list";
-    // console.log(memberManager)
 
 memberManager.func.init = function () {
     memberManager.func.createTabs();
@@ -351,12 +350,10 @@ memberManager.func.drawCalendar = function(){
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
-        windowResize: function(){},
         eventClick: function(info) {
             memberManager.func.showCalendarInfo(info);
         }, 
         events:data,
-
         editable: true,
         eventDrop: function(info) {
             memberManager.func.dropEventUpdata(info);
@@ -453,4 +450,6 @@ memberManager.func.dropEventUpdata =function(info){
     }
 };
 
-
+window.addEventListener("resize", (e) => {
+    memberManager.func.drawCalendar();
+});
